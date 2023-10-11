@@ -49,8 +49,8 @@ The system shall provide the ability to:
 3) Add a root cause to the resolution.
 ### 3.7 Incident Tracking
 Users shall be able to view a list of issues currently in various states within the system.
-##  Dev/Execution Platform  
+## 4. Dev/Execution Platform  
 Angular-ReactJS, Any open source DB, API using any opensource app servers
- ## 4. Conclusion
+ ## 5. Conclusion
 The Network Ticketing Management System aims to provide a comprehensive solution for incident management within the customer's network inventory. This document outlines the functional and non-functional requirements that will guide the development and implementation of the system.
  
