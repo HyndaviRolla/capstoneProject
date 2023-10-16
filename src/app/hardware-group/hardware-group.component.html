@@ -1,0 +1,65 @@
+<!--  
+ 
+<div>
+    <h2>Incidents for Hardware Group</h2>
+    <ul>
+      <li *ngFor="let incident of incidents">
+        {{ incident.description }} - {{ incident.issueType }}
+        <div>
+          <label for="groupDropdown">Forward to Group:</label>
+          <select id="groupDropdown" [(ngModel)]="selectedGroup">
+            <option value="" disabled>Select a group</option>
+            <option *ngFor="let group of availableGroups" [value]="group">{{ group }}</option>
+          </select>
+          <button (click)="forwardIncident(incident)">Forward</button>
+        </div>
+      </li>
+    </ul>
+  </div> -->
+
+
+
+
+  <!-- hardware-group.component.html -->
+
+
+
+
+ <div>
+    <h2>Incidents for Hardware Group</h2>
+    
+
+    <ul>
+      <li *ngFor="let incident of incidents">
+        {{ incident.description }} - {{ incident.issueType }}
+        <div>
+          <label for="targetGroup">Forward to Group:</label>
+          <select id="targetGroup" [(ngModel)]="selectedGroup">
+            <option *ngFor="let group of availableGroups" [value]="group">
+              {{ group }}
+            </option>
+          </select>
+        </div>
+        <div>
+          <label for="forwardingMessage">Forwarding Message:</label>
+          <input type="text" id="forwardingMessage" [(ngModel)]="forwardingMessage" />
+        </div>
+        <button (click)="forwardIncident(incident)">Forward Incident</button>
+      </li>
+    </ul>
+    <div>
+        <h2>Forwarded Incident List</h2>
+        <div *ngFor="let incident of forwardedIncidents">
+            <p> hii</p>
+          <div class="card-body">
+            <h5 class="card-title">{{ incident.description }}</h5>
+            <p class="card-text">Issue Type: {{ incident.issueType }}</p>
+            <p class="card-text">Assignment Group: {{ incident.assignmentGroup }}</p>
+            <p class="card-text">Forwarded To: {{ incident.forwardedTo }}</p>
+            <p class="card-text">Forwarding Message: {{ incident.forwardingmessage }}</p>
+          </div>
+        </div>
+      </div>
+      
+  </div> 
+ 

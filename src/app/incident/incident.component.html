@@ -1,0 +1,48 @@
+ <!-- incident-form.component.html -->
+<div>
+
+
+<div>
+    <label for="search">Search Network Elements:</label>
+    <input type="text" id="search" [(ngModel)]="search" />
+    <button (click)="searchNetworkElements()">Search</button>
+  </div>
+  
+  <div *ngIf="networkElements">
+    <label for="networkElement">Select Network Element:</label>
+    <select id="networkElement" [(ngModel)]="selectedNetworkElement" (change)="onNetworkElementSelected()">
+      <option *ngFor="let element of networkElements" [ngValue]="element">{{ element.name }}</option>
+    </select>
+  </div>
+  
+  <div *ngIf="components">
+    <label for="component">Select Component:</label>
+    <select id="component" [(ngModel)]="selectedComponent">
+      <option *ngFor="let component of components" [ngValue]="component">{{ component.componentName }}</option>
+    </select>
+  </div>
+  
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" [(ngModel)]="description"></textarea>
+  </div>
+   <!-- incident.component.html -->
+<div>
+  <label for="issueType">Issue Type:</label>
+  <select id="issueType" [(ngModel)]="selectedIssueType">
+    <option value="hardware">Hardware</option>
+    <option value="software">Software</option>
+    <!-- Add other issue types as needed -->
+  </select>
+<!-- 
+  <label for="assignmentGroup">Assignment Group:</label>
+  <select id="assignmentGroup" [(ngModel)]="selectedAssignmentGroup">
+ 
+  </select> -->
+</div>
+
+  <button (click)="submitIncident()">Submit</button>
+</div>
+
+
+  
